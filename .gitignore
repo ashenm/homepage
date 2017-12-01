@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# dotcache volatile private data files
+.cache
+
+# dotdata non-volatile private data files
+.data
