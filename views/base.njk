@@ -1,0 +1,38 @@
+<!--
+
+  {{ title }}
+  {{ description }}
+
+  Ashen Gunaratne
+  mail@ashenm.ml
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta content="Ashen M. Gunaratne is a computer science undergraduate student in the School of Engineering and Applied Sciences of Harvard University" name="description" />
+  <meta content="ashen m. gunaratne homepage" name="keywords" />
+  <meta content="Ashen Gunaratne" name="author" />
+
+  <title>{{ title }}</title>
+
+  {% block metadata %}{% endblock %}
+
+  {% block scripts %}{% endblock %}
+
+</head>
+<body>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  <main>
+    {% block main %}{% endblock %}
+  </main>
+  <footer>
+    {% block footer %}{% endblock %}
+  </footer>
+</body>
+</html>
