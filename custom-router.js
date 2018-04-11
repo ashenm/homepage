@@ -56,7 +56,7 @@ class Router {
       .reduce((accumulator, route, index, routes) => {
 
         const sanitised = route.trim();
-        const [path, location] = route.split(' ');
+        const [path, location] = sanitised.split(' ');
 
         // ignore whitespace
         if (!sanitised)
