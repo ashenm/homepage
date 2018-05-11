@@ -62,3 +62,6 @@ typings/
 
 # dotdata non-volatile private data files
 .data
+
+# facilitator scripts
+scripts
