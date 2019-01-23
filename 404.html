@@ -1,10 +1,10 @@
-{% extends "base.njk" %}
-{% set title = "Not Found" %}
-{% set description = "The requested page was not found" %}
+---
+desc: The requested page was not found
+---
 
-{% block metadata %}
+{% capture metadata %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
-  <style type="text/css">
+  <style>
 
     body {
       margin: 0px;
@@ -50,18 +50,23 @@
     }
 
   </style>
-{% endblock %}
+{% endcapture %}
 
-{% block scripts %}{% endblock %}
+{%- capture scripts -%}{%- endcapture -%}
 
-{% block header %}{% endblock %}
+{%- capture body -%}
+  <header>
+    <h1 style="display: none;">404 Not Found</h1>
+  </header>
+  <main>
+    <div class="container">
+      <span class="ionicons ion-sad"></span>
+      <h1>404</h1>
+      <h5>The requested page was not found</h5>
+    </div>
+  </main>
+  <footer>
+  </footer>
+{%- endcapture -%}
 
-{% block main %}
-  <div class="container">
-    <span class="ionicons ion-sad"></span>
-    <h1>404</h1>
-    <h5>The requested page was not found</h5>
-  </div>
-{% endblock %}
-
-{% block footer %}{% endblock %}
+{%- include base.html -%}

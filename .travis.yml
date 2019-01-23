@@ -1,15 +1,15 @@
-sudo:
-  false
-
 language:
-  generic
+  ruby
 
 install:
-  true
+  make install
+
+script:
+  make build
 
 deploy:
   provider: script
-  script: curl --get --fail --silent --show-error --request POST --output /dev/null --data-urlencode projectId=bddbe95a-e8d0-4ea0-8afc-88c93c2ebd46 --data-urlencode repo="$TRAVIS_REPO_SLUG" --data-urlencode token="$GITHUB_OAUTH_TOKEN" "https://api.glitch.com/project/githubImport"
+  script: make deploy
 
 notifications:
   slack:
