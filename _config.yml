@@ -1,0 +1,23 @@
+# jekyll config
+safe: ture
+timezone: 'Etc/UTC'
+encoding: 'utf-8'
+url: 'https://www.ashenm.ml/'
+plugins:
+  - jekyll-redirect-from
+
+# metadata defaults
+lang: 'en'
+title: 'Ashen Gunaratne'
+author: 'Ashen Gunaratne'
+email: 'mail@ashenm.ml'
+keywords: 'ashen, gunaratne, homepage, bio, curriculum vitae, cv, resume'
+desc: 'Ashen M. Gunaratne is a computer science undergraduate student in the School of Engineering and Applied Sciences of Harvard University'
+
+# front matter defaults
+defaults:
+  scope:
+    path: ''
+    type: 'pages'
+  values:
+    layout: 'default'

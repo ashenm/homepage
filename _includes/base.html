@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 
+  {{ page.title | default: site.title }}
+  {{ page.desc | default: site.desc }}
+  {{ page.url | absolute_url }}
+
+  {{ page.author | default: site.author }}
+  {{ page.email | default: site.email }}
+
+ -->
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+
+  <meta charset="{{ page.encoding | default: site.encoding }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="{{ page.desc | default: site.desc }}" />
+  <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
+  <meta name="author" content="{{ page.author | default: site.author }}" />
+
+  <meta property="og:locale" content="{{ page.lang | default: site.lang }}" />
+  <meta property="og:title" content="{{ page.title | default: site.title }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+
+  <title>{{ page.title | default: site.title }}</title>
+
+  <link href="{{ site.url }}{{ page.url }}" rel="canonical" />
+  <link href="https://awsmedia.s3.amazonaws.com/favicon.ico" type="image/ico" rel="icon" />
+
+  {{ metadata }}
+
+  <script type="application/ld+json">
+    {
+      "name": "{{ page.title | default: site.title }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ page.author | default: site.author }}"
+      },
+      "@type": "WebSite",
+      "url": "{{ site.url }}{{ page.url }}",
+      "headline":"{{ site.title }}",
+      "sameAs": [
+        "https://github.com/ashenm",
+        "https://linkedin.com/in/ashenm/",
+        "https://www.twitter.com/_ashenm",
+        "https://www.instagram.com/_ashenm"
+      ],
+      "@context":"http://schema.org"
+    }
+  </script>
+
+  {{ scripts }}
+
+</head>
+<body>
+  {{ body }}
+</body>
+</html>
