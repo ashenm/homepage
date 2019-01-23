@@ -4,7 +4,7 @@ import os
 
 # build custom routes
 print('travis_fold:start:build_routes\033[33;1mbuild routes\033[0m')
-os.spawnlp(os.P_WAIT, 'python3', 'python', '.build/routes.py')
+os.spawnlp(os.P_WAIT, 'python3', 'python', '.travis/routes.py')
 print('\ntravis_fold:end:build_routes\r')
 
 # build site
