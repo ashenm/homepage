@@ -8,8 +8,11 @@ script:
   make build
 
 deploy:
-  provider: script
-  script: make deploy
+  provider: pages
+  skip-cleanup: true
+  keep-history: true
+  github-token: $GITHUB_TOKEN
+  fqdn: www.ashenm.ml
 
 notifications:
   slack:
