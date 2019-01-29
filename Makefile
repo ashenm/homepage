@@ -11,5 +11,8 @@ serve:
 build: _data/routes.yml
 	./.travis/build.py
 
+culminate:
+	./.travis/culminate.py
+
 clean:
 	./.travis/clean.py
