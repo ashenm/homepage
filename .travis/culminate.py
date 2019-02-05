@@ -11,7 +11,7 @@ origin = 'https://www.ashenm.ml'
 # construct file hrefs
 for (folder, folders, files) in walk('_site'):
   for file in files:
-    hrefs.append('{}{}/{}'.format(origin, folder.lstrip('.'), file))
+    hrefs.append('{}/{}'.format(origin, file))
 
 # purge CloudFlare cache
 # https://api.cloudflare.com/#zone-purge-files-by-url
