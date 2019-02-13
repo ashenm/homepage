@@ -7,7 +7,7 @@ from urllib.request import urlopen
 spawnlp(P_WAIT, 'python3', 'python', '.travis/routes.py')
 
 # build site
-spawnlp(P_WAIT, 'jekyll', 'jekyll', 'build')
+spawnlp(P_WAIT, 'bundle', 'bundle', 'exec', 'jekyll', 'build')
 
 # fetch resume.html
 with open(file='resume.html', mode='wb') as file:
