@@ -5,12 +5,12 @@ from os import environ
 from urllib.request import Request, urlopen
 
 # parameters
-hrefs = []
 origin = 'https://www.ashenm.ml'
+hrefs = [ origin ]
 
 # construct file hrefs
 with open('.artifacts') as artifacts:
-  hrefs = [ '{}{}'.format(origin, artifact.strip()) for artifact in artifacts ]
+  hrefs.extend([ '{}{}'.format(origin, artifact.strip()) for artifact in artifacts ])
 
 # purge CloudFlare cache
 # https://api.cloudflare.com/#zone-purge-files-by-url
