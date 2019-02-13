@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import os
+from os import P_WAIT, remove, spawnlp
 from yaml import load
 
 # build artifacts
@@ -13,7 +13,7 @@ excludes = [
 # clean build artifacts
 for exclude in excludes:
   try:
-    os.remove(exclude)
+    remove(exclude)
   except:
     pass
 
@@ -21,9 +21,9 @@ for exclude in excludes:
 with open('_data/routes.yml') as file:
   for route in load(file):
     try:
-      os.remove('{}.html'.format(route['path']))
+      remove('{}.html'.format(route['path']))
     except:
       pass
 
 # clean jekyll build artifacts
-os.spawnlp(os.P_WAIT, 'jekyll', 'jekyll', 'clean')
+spawnlp(P_WAIT, 'bundle', 'bundle', 'exec', 'jekyll', 'clean')
