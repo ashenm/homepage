@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from json import dumps
-from os import walk, environ
+from os import environ
 from urllib.request import Request, urlopen
 
 # parameters
@@ -9,9 +9,8 @@ hrefs = []
 origin = 'https://www.ashenm.ml'
 
 # construct file hrefs
-for (folder, folders, files) in walk('_site'):
-  for file in files:
-    hrefs.append('{}/{}'.format(origin, file))
+with open('.artifacts') as artifacts:
+  hrefs = [ '{}{}'.format(origin, artifact.strip()) for artifact in artifacts ]
 
 # purge CloudFlare cache
 # https://api.cloudflare.com/#zone-purge-files-by-url

@@ -5,6 +5,7 @@ from yaml import load
 
 # build artifacts
 excludes = [
+  '.artifacts',
   'resume.pdf',
   'resume.html'
 ]
