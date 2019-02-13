@@ -12,14 +12,14 @@ script:
   make build
 
 deploy:
-  provider: pages
-  skip-cleanup: true
-  keep-history: true
-  github-token: $GITHUB_TOKEN
-  fqdn: www.ashenm.ml
-
-after_deploy:
-  make culminate
+  - provider: pages
+    skip-cleanup: true
+    keep-history: true
+    github-token: $GITHUB_TOKEN
+    fqdn: www.ashenm.ml
+  - provider: script
+    skip_cleanup: true
+    script: make culminate
 
 notifications:
   slack:
