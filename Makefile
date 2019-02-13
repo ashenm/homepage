@@ -2,6 +2,9 @@ default:
 	$(MAKE) build
 	$(MAKE) serve
 
+environment:
+	./.travis/environment.py
+
 install:
 	./.travis/install.py
 
