@@ -1,0 +1,2 @@
+# Override GitHub Linguist
+*.html linguist-language=Liquid
