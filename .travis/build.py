@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from os import P_WAIT, spawnlp, walk
+from glob import iglob
+from os import P_WAIT, spawnlp
 from urllib.request import urlopen
 
 # build custom routes
@@ -19,5 +20,4 @@ with open(file='resume.pdf', mode='wb') as file:
 
 # list artifacts for cache purging
 with open(file='.artifacts', mode='wt') as file:
-  for (folder, folders, artifacts) in walk('_site'):
-    file.writelines([ '{}/{}\n'.format(folder.replace('_site', ''), artifact) for artifact in artifacts ])
+  file.writelines([ '{}\n'.format(path.replace('_site', '')) for path in iglob('_site/**', recursive=True) ])
