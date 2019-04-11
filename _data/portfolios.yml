@@ -1,0 +1,15 @@
+- title: Codepen
+  link: https://codepen.io/ashenm
+  fontawesome: fab fa-codepen
+
+- title: GitHub
+  link: https://github.com/ashenm
+  fontawesome: fab fa-github
+
+- title: Glitch
+  link: https://glitch.com/@ashenm
+  fontawesome: fab fa-node-js
+
+- title: repl.it
+  link: https://repl.it/@ashenm
+  fontawesome: fas fa-code-branch

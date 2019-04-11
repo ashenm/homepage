@@ -147,54 +147,25 @@
         <div class="section">
           <h2 class="sr-only">portfolio</h2>
           <div class="row">
+          {% for portfolio in site.data.portfolios %}
             <div class="col-6 col-sm my-4">
-              <a class="no-decoration" href="https://codepen.io/ashenm" target="_blank" rel="author">
-                <i class="fab fa-codepen contact"></i>
-                <h4>Codepen</h4>
+              <a class="no-decoration" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
+                <i class="{{ portfolio.fontawesome }} contact"></i>
+                <h4>{{ portfolio.title }}</h4>
               </a>
             </div>
-            <div class="col-6 col-sm my-4">
-              <a class="no-decoration" href="https://github.com/ashenm" target="_blank" rel="author">
-                <i class="fab fa-github contact"></i>
-                <h4>GitHub</h4>
-              </a>
-            </div>
-            <div class="col-6 col-sm my-4">
-              <a class="no-decoration" href="https://glitch.com/@ashenm" target="_blank" rel="author">
-                <i class="fab fa-node-js contact"></i>
-                <h4>Glitch</h4>
-              </a>
-            </div>
-            <div class="col-6 col-sm my-4">
-              <a class="no-decoration" href="https://repl.it/@ashenm" target="_blank" rel="author">
-                <i class="fas fa-code-branch contact"></i>
-                <h4>repl.it</h4>
-              </a>
-            </div>
+          {% endfor %}
           </div>
         </div>
 
         <div class="section">
           <h2 class="sr-only">contact</h2>
           <div class="row">
+          {% for contact in site.data.contacts %}
             <div class="col-6 col-md-4 col-lg my-4">
-              <a href="mailto:mail@ashenm.ml" rel="author"><i class="fas fa-envelope contact"></i></a>
+              <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author' }}"><i class="{{ contact.fontawesome }} contact"></i></a>
             </div>
-            <div class="col-6 col-md-4 col-lg my-4">
-              <a href="https://www.ashenm.ml" target="_blank" rel="author"><i class="fas fa-globe-americas contact"></i></a>
-            </div>
-            <div class="col-6 col-md-4 col-lg my-4">
-              <a href="https://www.instagram.com/_ashenm" target="_blank" rel="author"><i class="fab fa-instagram contact"></i></a>
-            </div>
-            <div class="col-6 col-md-4 col-lg my-4">
-              <a href="https://www.linkedin.com/in/ashenm" target="_blank" rel="author"><i class="fab fa-linkedin contact"></i></a>
-            </div>
-            <div class="col-6 col-md-4 col-lg my-4">
-              <a href="https://stackoverflow.com/users/8806162/ashenm" target="_blank" rel="author"><i class="fab fa-stack-overflow contact"></i></a>
-            </div>
-            <div class="col-6 col-md-4 col-lg my-4">
-              <a href="https://www.twitter.com/_ashenm" target="_blank" rel="author"><i class="fab fa-twitter contact"></i></a>
-            </div>
+          {% endfor %}
           </div>
         </div>
 
