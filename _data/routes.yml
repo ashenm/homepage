@@ -2,3 +2,5 @@
   url: https://www.example.com/
 - path: vault
   url: https://vault.ashenm.ml/
+- path: feedback
+  url: https://sentiment.ashenm.ml/
