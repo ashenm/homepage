@@ -1,17 +1,23 @@
-- link: mailto:mail@ashenm.ml
+- title: mail
+  link: mailto:mail@ashenm.ml
   fontawesome: fas fa-envelope
 
-- link: https://www.ashenm.ml
+- title: website
+  link: https://www.ashenm.ml
   fontawesome: fas fa-globe-americas
 
-- link: https://www.instagram.com/_ashenm
+- title: instagram
+  link: https://www.instagram.com/_ashenm
   fontawesome: fab fa-instagram
 
-- link: https://www.linkedin.com/in/ashenm
+- title: linkedin
+  link: https://www.linkedin.com/in/ashenm
   fontawesome: fab fa-linkedin
 
-- link: https://stackoverflow.com/users/8806162/ashenm
+- title: stack overflow
+  link: https://stackoverflow.com/users/8806162/ashenm
   fontawesome: fab fa-stack-overflow
 
-- link: https://www.twitter.com/_ashenm
+- title: twitter
+  link: https://www.twitter.com/_ashenm
   fontawesome: fab fa-twitter
