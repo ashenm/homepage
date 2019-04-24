@@ -3,7 +3,7 @@
 
 {%- capture metadata -%}
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css" integrity="sha256-27KRQA6ck6EiKWEkCpHR2NcEeAYnqz8Q5a83PYHh1z0=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/solid.min.css" integrity="sha256-Vht+b9mTSuWOjATVOFWpaSypXmCwIxrp4XZueCRfTdM=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.min.css" integrity="sha256-vewCp5psT5Kc8SybIVSSpVMMSJrSdIf4SIdGaDERVJM=" crossorigin="anonymous" />
@@ -29,14 +29,11 @@
       color: rgba(255,255,255,.75);
       background-color: transparent;
       border-bottom: .16rem solid transparent;
+      margin-left: 1rem;
     }
 
     #nav-main .nav-link:hover {
       border-bottom-color: rgba(255,255,255,.25);
-    }
-
-    #nav-main .nav-link {
-      margin-left: 1rem;
     }
 
     #nav-main .active {
@@ -54,41 +51,26 @@
       font-size: 5rem;
     }
 
-    .no-decoration,
-    .no-decoration:hover {
-      text-decoration: none;
-    }
-
     /**
      * hide navbar branding and center 
      * bottom nav elements on mobile
      */
-    @media (max-width: 512px) {
-      #nav-main {
-        bottom: 0;
-        top: unset;
-        padding: 0px;
-        justify-content: center;
-      }
-      #nav-main .navbar-brand {
-        display: none;
-      }
-      #nav-main .active,
-      #nav-main .nav-link {
-        border-bottom: unset;
-      }
+    @media (max-width: 576px) {
+      #nav-main { bottom: 0; top: unset; }
+      #nav-main .nav-link { margin: 0; border-bottom: unset; }
     }
 
     /**
-     * lessen margins on mobile landscape
+     * handle smaller viewports on landscape
      */
-    @media (max-width: 800px) and (orientation: landscape) {
-      #nav-main .nav-link {
-        padding: .125rem .25rem!important;
-      }
-      .shrink-on-landscape {
-        margin-bottom: .25rem!important;
-      }
+    @media (max-height: 576px) and (orientation: landscape) {
+      img.shrink-landscape { width: 149px; height: 149px; }
+      .section .col-6.col-sm { -ms-flex: 1 0 0; flex: 1 0 0; }
+      .section .col-6.col-md-4 { -ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; }
+      .shrink-landscape { margin: 0!important; margin-bottom: .25rem!important; }
+      #nav-main { -ms-flex-pack: justify!important; justify-content: space-between!important; padding: 0rem .5rem!important; bottom: unset; top: 0; }
+      #nav-main .navbar-brand { display: inline-block!important; }
+      #nav-main .nav-link { padding: .5rem; }
     }
 
   </style>
@@ -108,16 +90,16 @@
 
 {%- capture body -%}
   <header>
-    <nav id="nav-main" class="pt-0 pb-0 navbar fixed-top navbar-dark">
-      <a class="navbar-brand" href="#main">Ashen Gunaratne</a>
+    <nav id="nav-main" class="navbar navbar-dark fixed-top justify-content-center justify-content-sm-between p-0 pr-sm-2 pl-sm-4">
+      <a class="navbar-brand d-none d-sm-inline-block" href="#main">Ashen Gunaratne</a>
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a data-menuanchor="about" class="nav-link" href="#about">about</a>
         </li>
-        <li class="nav nav-pills">
+        <li class="nav-item">
           <a data-menuanchor="portfolio" class="nav-link" href="#portfolio">portfolio</a>
         </li>
-        <li class="nav nav-pills">
+        <li class="nav-item">
           <a data-menuanchor="contact" class="nav-link" href="#contact">contact</a>
         </li>
       </ul>
@@ -134,9 +116,9 @@
 
         <div class="section">
           <h2 class="sr-only">about</h2>
-          <img alt="a portrait of ashen gunaratne" width="200" height="200" class="m-3 img-fluid rounded-circle shrink-on-landscape" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
-          <p class="shrink-on-landscape">Ashen Gunaratne is is a computer science undergraduate student in the <a href="https://www.seas.harvard.edu" target="_blank">School of Engineering and Applied Sciences of Harvard University</a>. He completed his primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a> and secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American School</a>.</p>
-          <a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light btn-compact rounded m-2">Résumé</a>
+          <img alt="a portrait of ashen gunaratne" width="200" height="200" class="m-3 img-fluid rounded-circle shrink-landscape" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
+          <p class="shrink-landscape">Ashen Gunaratne is is a computer science undergraduate student in the <a href="https://www.seas.harvard.edu" target="_blank">School of Engineering and Applied Sciences of Harvard University</a>. He completed his primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a> and secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American School</a>.</p>
+          <a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light btn-compact rounded">Résumé</a>
         </div>
 
         <div class="section">
@@ -144,7 +126,7 @@
           <div class="row">
           {% for portfolio in site.data.portfolios %}
             <div class="col-6 col-sm my-4">
-              <a class="no-decoration" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
+              <a class="text-decoration-none" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
                 <i class="{{ portfolio.fontawesome }} contact"></i>
                 <h4>{{ portfolio.title }}</h4>
               </a>
