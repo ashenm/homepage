@@ -17,10 +17,14 @@
   <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
   <meta name="author" content="{{ page.author | default: site.author }}" />
 
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="https://avatars1.githubusercontent.com/u/16164426?s=400&amp;v=4" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:title" content="{{ page.title | default: site.title }}" />
+  <meta property="og:description" content="{{ page.desc | default: site.desc }}" />
   <meta property="og:locale" content="{{ page.lang | default: site.lang }}" />
   <meta property="og:title" content="{{ page.title | default: site.title }}" />
   <meta property="og:url" content="{{ page.url | absolute_url }}" />
-  <meta property="og:site_name" content="{{ site.title }}" />
 
   <meta name="google-site-verification" content="RWbNTIPAsnOLAUh_0wsSusWFpyEgz2XEAO9D81bMOiE" />
 
