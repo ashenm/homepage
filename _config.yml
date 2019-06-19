@@ -9,7 +9,9 @@ plugins:
 # metadata defaults
 lang: 'en'
 title: 'Ashen Gunaratne'
-author: 'Ashen Gunaratne'
+author:
+  first_name: 'Ashen'
+  last_name: 'Gunaratne'
 email: 'mail@ashenm.ml'
 keywords: 'ashen, gunaratne, homepage, bio, curriculum vitae, cv, resume'
 desc: 'Ashen M. Gunaratne is a computer science undergraduate student in the School of Engineering and Applied Sciences of Harvard University'

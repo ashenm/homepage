@@ -4,7 +4,7 @@
   {{ page.desc | default: site.desc }}
   {{ page.url | absolute_url }}
 
-  {{ page.author | default: site.author }}
+  {{ page.author.last_name | default: site.author.first_name }} {{ page.author.last_name | default: site.author.last_name }}
   {{ page.email | default: site.email }}
 
  -->
@@ -15,10 +15,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="{{ page.desc | default: site.desc }}" />
   <meta name="keywords" content="{{ page.keywords | default: site.keywords }}" />
-  <meta name="author" content="{{ page.author | default: site.author }}" />
+  <meta name="author" content="{{ page.author.first_name | default: site.author.first_name }} {{ page.author.last_name | default: site.author.last_name }}" />
 
   <meta property="og:type" content="profile" />
   <meta property="og:image" content="https://avatars1.githubusercontent.com/u/16164426?s=400&amp;v=4" />
+  <meta property="og:profile:first_name" content="{{ page.author.first_name | default: site.author.first_name }}" />
+  <meta property="og:profile:last_name" content="{{ page.author.last_name | default: site.author.last_name }}" />
   <meta property="og:site_name" content="{{ site.title }}" />
   <meta property="og:title" content="{{ page.title | default: site.title }}" />
   <meta property="og:description" content="{{ page.desc | default: site.desc }}" />
@@ -45,7 +47,7 @@
       "name": "{{ page.title | default: site.title }}",
       "author": {
         "@type": "Person",
-        "name": "{{ page.author | default: site.author }}"
+        "name": "{{ page.author.first_name | default: site.author.first_name }} {{ page.author.last_name | default: site.author.last_name }}"
       },
       "@type": "WebSite",
       "url": "{{ site.url }}{{ page.url }}",
