@@ -130,7 +130,7 @@
             <div class="col-6 col-sm my-4">
               <a class="text-decoration-none" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
                 <i class="{{ portfolio.fontawesome }} contact"></i>
-                <h4>{{ portfolio.title }}</h4>
+                <h3>{{ portfolio.title }}</h3>
               </a>
             </div>
           {% endfor %}
@@ -144,7 +144,7 @@
             <div class="col-6 col-md-4 col-lg my-4">
               <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author' }}">
                 <i class="{{ contact.fontawesome }} contact"></i>
-                <h4 class="sr-only sr-only-focusable">{{ contact.title }}</h4>
+                <h3 class="sr-only sr-only-focusable">{{ contact.title }}</h3>
               </a>
             </div>
           {% endfor %}
