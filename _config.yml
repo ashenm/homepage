@@ -3,8 +3,15 @@ safe: ture
 timezone: 'Etc/UTC'
 encoding: 'utf-8'
 url: 'https://www.ashenm.ml'
+
 plugins:
   - jekyll-redirect-from
+
+exclude:
+  - CNAME
+  - Gemfile
+  - Makefile
+  - README.md
 
 # metadata defaults
 lang: 'en'
