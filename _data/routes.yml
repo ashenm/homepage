@@ -4,3 +4,5 @@
   url: https://vault.ashenm.ml/
 - path: feedback
   url: https://sentiment.ashenm.ml/
+- path: github
+  url: https://github.com/ashenm
