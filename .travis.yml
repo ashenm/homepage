@@ -2,7 +2,7 @@ language:
   ruby
 
 dist:
-  xenial
+  bionic
 
 before_install:
   make environment
