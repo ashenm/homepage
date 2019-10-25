@@ -107,7 +107,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" integrity="sha256-SNaaqfQPa0XlEqQDrsurQ+Qq5XnhNrwHQXnZpdXlCEI=" crossorigin="anonymous"></script>
 
   <script>
-    (function () { $(function() { $('#fullpage').fullpage({ menu: '#nav-main', anchors: ['introduction', 'about', 'portfolio', 'contact'] }); }); })();
+    (function () { $(function() { $('main').fullpage({ menu: '#nav-main', anchors: ['introduction', 'about', 'portfolio', 'contact'] }); }); })();
   </script>
 
 {%- endcapture -%}
@@ -129,59 +129,54 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <div class="container">
-      <div id="fullpage" >
+  <main class="container">
 
-        <div class="section active">
-          <h1>Ashen Gunaratne</h1>
-          <p class="lead">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences of Harvard University</a></p>
+    <div class="section active">
+      <h1>Ashen Gunaratne</h1>
+      <p class="lead">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences of Harvard University</a></p>
+    </div>
+
+    <div class="section">
+      <h2 class="sr-only">about</h2>
+      <img alt="a portrait of ashen gunaratne" width="200" height="200" class="m-3 img-fluid bg-light rounded-circle shrink-landscape" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
+      <p class="shrink-landscape">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
+          School</a> and primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a>.</p>
+      <h3 class="d-inline-block"><a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light btn-compact rounded">Résumé</a></h3>
+    </div>
+
+    <div class="section">
+      <h2 class="sr-only">portfolio</h2>
+      <div class="row">
+      {% for portfolio in site.data.portfolios %}
+        <div class="col-6 col-sm my-4">
+          <a class="text-decoration-none" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
+            <i class="{{ portfolio.fontawesome }} contact"></i>
+            <h3>{{ portfolio.title }}</h3>
+          </a>
         </div>
-
-        <div class="section">
-          <h2 class="sr-only">about</h2>
-          <img alt="a portrait of ashen gunaratne" width="200" height="200" class="m-3 img-fluid bg-light rounded-circle shrink-landscape" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
-          <p class="shrink-landscape">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
-              School</a> and primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a>.</p>
-          <h3 class="d-inline-block"><a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light btn-compact rounded">Résumé</a></h3>
-        </div>
-
-        <div class="section">
-          <h2 class="sr-only">portfolio</h2>
-          <div class="row">
-          {% for portfolio in site.data.portfolios %}
-            <div class="col-6 col-sm my-4">
-              <a class="text-decoration-none" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
-                <i class="{{ portfolio.fontawesome }} contact"></i>
-                <h3>{{ portfolio.title }}</h3>
-              </a>
-            </div>
-          {% endfor %}
-          </div>
-        </div>
-
-        <div class="section">
-          <h2 class="sr-only">contact</h2>
-          <div class="row">
-          {% for contact in site.data.contacts %}
-            <div class="col-6 col-md-4 col-lg my-4">
-              <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author' }}">
-                <i class="{{ contact.fontawesome }} contact"></i>
-                <h3 class="sr-only sr-only-focusable">{{ contact.title }}</h3>
-              </a>
-            </div>
-          {% endfor %}
-          </div>
-        </div>
-
+      {% endfor %}
       </div>
     </div>
+
+    <div class="section">
+      <h2 class="sr-only">contact</h2>
+      <div class="row">
+      {% for contact in site.data.contacts %}
+        <div class="col-6 col-md-4 col-lg my-4">
+          <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author' }}">
+            <i class="{{ contact.fontawesome }} contact"></i>
+            <h3 class="sr-only sr-only-focusable">{{ contact.title }}</h3>
+          </a>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+
   </main>
   <footer>
   </footer>
-  <noscript>
-    <i class="fas fa-coffee"></i>
-    <span class="text-monospace">this webpage requires JavaScript 0:-)</span>
+  <noscript class="text-monospace">
+    <i class="fas fa-coffee"></i>this webpage requires JavaScript 0:-)
   </noscript>
 {%- endcapture -%}
 
