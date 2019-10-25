@@ -13,6 +13,12 @@
 
   <style>
 
+    a,
+    a:focus,
+    a:hover {
+      color: #fff;
+    }
+
     body {
       color: #fff;
       text-align: center;
@@ -20,10 +26,17 @@
       text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
     }
 
-    a,
-    a:focus,
-    a:hover {
-      color: #fff;
+    noscript {
+      display: block;
+      font-size: 1.25rem;
+      padding: 0 2.5rem;
+      margin: 9rem 0;
+    }
+
+    noscript > i.fas {
+      margin: 0.5em 0;
+      font-size: 2.5em;
+      display: block;
     }
 
     #nav-main .nav-link {
@@ -41,10 +54,6 @@
     #nav-main .active {
       color: #fff;
       border-bottom-color: #fff;
-    }
-
-    .btn-compact {
-      padding: .25rem .5625rem;
     }
 
     .contact {
@@ -77,28 +86,6 @@
 
   </style>
 
-  <noscript>
-    <style>
-
-      header, main, footer {
-        display: none;
-      }
-
-      body > noscript {
-        display: block;
-        font-size: 1.25rem;
-        margin: 5rem 0;
-      }
-
-      body > noscript > i.fas {
-        margin: 0.5em 0;
-        font-size: 2.5em;
-        display: block;
-      }
-
-    </style>
-  </noscript>
-
 {%- endcapture -%}
 
 {%- capture scripts -%}
@@ -107,13 +94,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" integrity="sha256-SNaaqfQPa0XlEqQDrsurQ+Qq5XnhNrwHQXnZpdXlCEI=" crossorigin="anonymous"></script>
 
   <script>
-    (function () { $(function() { $('main').fullpage({ menu: '#nav-main', anchors: ['introduction', 'about', 'portfolio', 'contact'] }); }); })();
+    (function () { $(function() { $('header, main, footer').removeClass('d-none').filter('main').fullpage({ menu: '#nav-main', anchors: ['introduction', 'about', 'portfolio', 'contact'] }); }); })();
   </script>
 
 {%- endcapture -%}
 
 {%- capture body -%}
-  <header>
+  <header class="d-none">
     <nav id="nav-main" class="navbar navbar-dark fixed-top justify-content-center justify-content-sm-between p-0 pr-sm-2 pl-sm-4">
       <a class="navbar-brand d-none d-sm-inline-block" href="#introduction">Ashen Gunaratne</a>
       <ul class="nav nav-pills">
@@ -129,7 +116,7 @@
       </ul>
     </nav>
   </header>
-  <main class="container">
+  <main class="container d-none">
 
     <div class="section active">
       <h1>Ashen Gunaratne</h1>
@@ -141,7 +128,7 @@
       <img alt="a portrait of ashen gunaratne" width="200" height="200" class="m-3 img-fluid bg-light rounded-circle shrink-landscape" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
       <p class="shrink-landscape">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
           School</a> and primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a>.</p>
-      <h3 class="d-inline-block"><a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light btn-compact rounded">Résumé</a></h3>
+      <h3 class="d-inline-block"><a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light rounded">Résumé</a></h3>
     </div>
 
     <div class="section">
@@ -173,10 +160,10 @@
     </div>
 
   </main>
-  <footer>
+  <footer class="d-none">
   </footer>
-  <noscript class="text-monospace">
-    <i class="fas fa-coffee"></i>this webpage requires JavaScript 0:-)
+  <noscript>
+    <i class="fas fa-coffee"></i><span class="text-monospace">this webpage requires JavaScript 0:-)</span>
   </noscript>
 {%- endcapture -%}
 
