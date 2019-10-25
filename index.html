@@ -77,6 +77,28 @@
 
   </style>
 
+  <noscript>
+    <style>
+
+      header, main, footer {
+        display: none;
+      }
+
+      body > noscript {
+        display: block;
+        font-size: 1.25rem;
+        margin: 5rem 0;
+      }
+
+      body > noscript > i.fas {
+        margin: 0.5em 0;
+        font-size: 2.5em;
+        display: block;
+      }
+
+    </style>
+  </noscript>
+
 {%- endcapture -%}
 
 {%- capture scripts -%}
@@ -157,6 +179,10 @@
   </main>
   <footer>
   </footer>
+  <noscript>
+    <i class="fas fa-coffee"></i>
+    <span class="text-monospace">this webpage requires JavaScript 0:-)</span>
+  </noscript>
 {%- endcapture -%}
 
 {%- include base.html -%}
