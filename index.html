@@ -39,49 +39,37 @@
       display: block;
     }
 
-    #nav-main .nav-link {
-      font-weight: bold;
-      color: rgba(255,255,255,.75);
-      background-color: transparent;
-      border-bottom: .16rem solid transparent;
-      margin-left: 1rem;
+    .nav-link {
+      color: #cbd3da;
     }
 
-    #nav-main .nav-link:hover {
-      border-bottom-color: rgba(255,255,255,.25);
+    .nav-link:hover,
+    .nav-link.active {
+      color: inherit;
+      border-radius: 0.15rem;
+      border-color: inherit;
     }
 
-    #nav-main .active {
-      color: #fff;
-      border-bottom-color: #fff;
-    }
-
-    .contact {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+    .portfolio i,
+    .contact i {
+      margin: 0.5rem;
       font-size: 5rem;
     }
 
-    /**
-     * hide navbar branding and center 
-     * bottom nav elements on mobile
-     */
-    @media (max-width: 576px) {
-      #nav-main { bottom: 0; top: unset; }
-      #nav-main .nav-link { margin: 0; border-bottom: unset; }
-    }
+    @media (min-width: 576px) {
 
-    /**
-     * handle smaller viewports on landscape
-     */
-    @media (max-height: 576px) and (orientation: landscape) {
-      img.shrink-landscape { width: 149px; height: 149px; }
-      .section .col-6.col-sm { -ms-flex: 1 0 0; flex: 1 0 0; }
-      .section .col-6.col-md-4 { -ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; }
-      .shrink-landscape { margin: 0!important; margin-bottom: .25rem!important; }
-      #nav-main { -ms-flex-pack: justify!important; justify-content: space-between!important; padding: 0rem .5rem!important; bottom: unset; top: 0; }
-      #nav-main .navbar-brand { display: inline-block!important; }
-      #nav-main .nav-link { padding: .5rem; }
+      nav.fixed-bottom {
+        top: 0;
+        bottom: unset;
+        justify-content: space-between;
+        padding-bottom: 0;
+        padding-top: 0;
+      }
+
+      .nav-link {
+        border-bottom: 0.15rem solid transparent;
+      }
+
     }
 
   </style>
@@ -94,70 +82,63 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" integrity="sha256-SNaaqfQPa0XlEqQDrsurQ+Qq5XnhNrwHQXnZpdXlCEI=" crossorigin="anonymous"></script>
 
   <script>
-    (function () { $(function() { $('header, main, footer').removeClass('d-none').filter('main').fullpage({ menu: '#nav-main', anchors: ['introduction', 'about', 'portfolio', 'contact'] }); }); })();
+    (function () { $(function() { $('header, main, footer').removeClass('d-none').filter('main').fullpage({ menu: 'nav', anchors: [ 'introduction', 'about', 'portfolio', 'contact' ] }); }); })();
   </script>
 
 {%- endcapture -%}
 
 {%- capture body -%}
   <header class="d-none">
-    <nav id="nav-main" class="navbar navbar-dark fixed-top justify-content-center justify-content-sm-between p-0 pr-sm-2 pl-sm-4">
-      <a class="navbar-brand d-none d-sm-inline-block" href="#introduction">Ashen Gunaratne</a>
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a data-menuanchor="about" class="nav-link" href="#about">about</a>
-        </li>
-        <li class="nav-item">
-          <a data-menuanchor="portfolio" class="nav-link" href="#portfolio">portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a data-menuanchor="contact" class="nav-link" href="#contact">contact</a>
-        </li>
-      </ul>
+    <nav class="navbar justify-content-center fixed-bottom font-weight-bold">
+      <a class="navbar-brand font-weight-light d-none d-sm-inline-block mr-auto" href="#introduction" data-menuanchor="introduction">Ashen Gunaratne</a>
+      <a class="nav-link mx-md-1 mx-lg-2" href="#about" data-menuanchor="about">about</a>
+      <a class="nav-link mx-md-1 mx-lg-2" href="#portfolio" data-menuanchor="portfolio">portfolio</a>
+      <a class="nav-link mx-md-1 mx-lg-2" href="#contact" data-menuanchor="contact">contact</a>
     </nav>
   </header>
   <main class="container d-none">
 
-    <div class="section active">
+    <section class="section">
       <h1>Ashen Gunaratne</h1>
-      <p class="lead">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences of Harvard University</a></p>
-    </div>
+      <h2 class="sr-only">introduction</h2>
+      <p>Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences of Harvard University</a></p>
+    </section>
 
-    <div class="section">
+    <section class="section">
       <h2 class="sr-only">about</h2>
-      <img alt="a portrait of ashen gunaratne" width="200" height="200" class="m-3 img-fluid bg-light rounded-circle shrink-landscape" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
-      <p class="shrink-landscape">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
+      <img class="bg-white rounded-circle my-3" alt="a portrait of ashen gunaratne" width="175" height="175" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
+      <p>Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
           School</a> and primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a>.</p>
-      <h3 class="d-inline-block"><a href="/resume.pdf" hreflang="en" target="_self" class="btn btn-light rounded">Résumé</a></h3>
-    </div>
+      <h3><a class="btn btn-light" href="/resume.pdf" hreflang="en">résumé</a></h3>
+    </section>
 
-    <div class="section">
+    <section class="section">
       <h2 class="sr-only">portfolio</h2>
       <div class="row">
       {% for portfolio in site.data.portfolios %}
-        <div class="col-6 col-sm my-4">
-          <a class="text-decoration-none" href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
-            <i class="{{ portfolio.fontawesome }} contact"></i>
+        <div class="portfolio col-6 col-lg my-3">
+          <a href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
+            <i class="{{ portfolio.fontawesome }}"></i>
             <h3>{{ portfolio.title }}</h3>
           </a>
         </div>
       {% endfor %}
       </div>
-    </div>
+    </section>
 
-    <div class="section">
+    <section class="section">
       <h2 class="sr-only">contact</h2>
       <div class="row">
       {% for contact in site.data.contacts %}
-        <div class="col-6 col-md-4 col-lg my-4">
+        <div class="contact col-6 col-sm-4 col-lg my-3">
           <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author' }}">
-            <i class="{{ contact.fontawesome }} contact"></i>
+            <i class="{{ contact.fontawesome }}"></i>
             <h3 class="sr-only sr-only-focusable">{{ contact.title }}</h3>
           </a>
         </div>
       {% endfor %}
       </div>
-    </div>
+    </section>
 
   </main>
   <footer class="d-none">
