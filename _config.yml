@@ -6,6 +6,7 @@ url: 'https://www.ashenm.ml'
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 exclude:
   - CNAME
@@ -25,8 +26,12 @@ desc: 'Ashen Gunaratne is an alumnus of the Harvard John A. Paulson School of En
 
 # front matter defaults
 defaults:
-  scope:
-    path: ''
-    type: 'pages'
-  values:
-    layout: 'default'
+  - scope:
+      path: ''
+      type: 'pages'
+    values:
+      layout: 'default'
+  - scope:
+      path: '404'
+    values:
+      sitemap: false

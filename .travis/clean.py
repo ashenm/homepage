@@ -7,7 +7,9 @@ from yaml import load
 excludes = [
   '.artifacts',
   'resume.pdf',
-  'resume.html'
+  'resume.html',
+  'robots.txt',
+  'sitemap.xml'
 ]
 
 # clean build artifacts

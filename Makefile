@@ -11,7 +11,7 @@ install:
 serve:
 	./.travis/serve.py
 
-build: _data/routes.yml
+build: _data/routes.yml clean
 	./.travis/build.py
 
 culminate:
