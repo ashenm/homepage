@@ -82,7 +82,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js" integrity="sha256-SNaaqfQPa0XlEqQDrsurQ+Qq5XnhNrwHQXnZpdXlCEI=" crossorigin="anonymous"></script>
 
   <script>
-    (function () { $(function() { $('header, main, footer').removeClass('d-none').filter('main').fullpage({ menu: 'nav', anchors: [ 'introduction', 'about', 'portfolio', 'contact' ] }); }); })();
+    (function () { $(function() { $('header, main, footer').removeClass('d-none').filter('main').fullpage({ menu: 'nav', anchors: [ 'introduction', 'about', 'portfolio', 'contact' ], afterLoad: function (d) { typeof ga !== "undefined" && ( ga('set', 'page', d.replace(/^introduction$|^/, '/')), ga('send', 'pageview') ); } }); }); })();
   </script>
 
 {%- endcapture -%}
