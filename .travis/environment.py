@@ -9,5 +9,5 @@ spawnlp(P_WAIT, 'sudo', 'sudo', 'apt-get', 'update')
 # install ruby header file
 spawnlp(P_WAIT, 'sudo', 'sudo', 'apt-get', 'install', '--yes', 'ruby-dev')
 
-# install pip3
-spawnlp(P_WAIT, 'sudo', 'sudo', 'apt-get', 'install', '--yes', 'python3-pip')
+# install python dependencies
+spawnlp(P_WAIT, 'sudo', 'sudo', 'apt-get', 'install', '--yes', 'python3-pip', 'python3-setuptools', 'python3-wheel')
