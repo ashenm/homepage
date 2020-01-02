@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from os import P_WAIT, remove, spawnlp
-from yaml import load
+from yaml import BaseLoader, load
 
 # build artifacts
 excludes = [
@@ -21,7 +21,7 @@ for exclude in excludes:
 
 # clean generated routes
 with open('_data/routes.yml') as file:
-  for route in load(file):
+  for route in load(file, Loader=BaseLoader):
     try:
       remove('{}.html'.format(route['path']))
     except:
