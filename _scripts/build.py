@@ -10,7 +10,7 @@ from subprocess import DEVNULL, PIPE, run
 from urllib.request import urlopen
 
 # build custom routes
-spawnlp(P_WAIT, 'python3', 'python', '.travis/routes.py')
+spawnlp(P_WAIT, 'python3', 'python', '_scripts/routes.py')
 
 # fetch resume.html
 with open(file='resume.html', mode='wb') as file:
@@ -21,7 +21,7 @@ with open(file='resume.pdf', mode='wb') as file:
   file.write(urlopen('https://raw.githubusercontent.com/ashenm/xmlresume/gh-pages/resume.pdf').read())
 
 # list artifacts for cache purging
-with open(file='.artifacts', mode='wt') as file:
+with open(file='artifacts.txt', mode='wt') as file:
   file.writelines([ '{}\n'.format(path.replace('_site', '')) for path in iglob('_site/**', recursive=True) ])
 
 # fetch base template

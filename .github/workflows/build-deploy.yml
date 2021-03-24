@@ -1,0 +1,75 @@
+name: Build and Deploy
+
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
+
+jobs:
+  build:
+    if: |
+      !startsWith(github.event.head_commit.message, '[Skip CI]')
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - run: pip3 install --requirement requirements.txt
+      - run: make build
+      - run: tar --create --bzip2 --verbose --file=artifacts.tar.bz2 _site
+      - uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: |
+            artifacts.tar.bz2
+            artifacts.txt
+    runs-on: ubuntu-latest
+  deploy:
+    needs:
+      - build
+    if: |
+      github.ref == 'refs/heads/master' &&
+      github.event_name != 'pull_request' &&
+      !startsWith(github.event.head_commit.message, '[Skip Deploy]')
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: artifacts
+      - run: tar --extract --bzip2 --verbose --file=artifacts.tar.bz2
+      - run: |
+          mkdir --parent /tmp/deploy
+          rsync --delete --links --recursive --verbose _site/ /tmp/deploy
+      - run: |
+          git init
+          git checkout --orphan gh-pages
+          git config user.email "mail@ashenm.ml"
+          git config user.name "Ashen Gunaratne"
+          echo "www.ashenm.ml" | tee CNAME
+          git add --all .
+          git commit --quiet --message "Deploy www.ashenm.ml to github.com/${GITHUB_REPOSITORY}.git:gh-pages"
+          git push --force --quiet "https://${{ secrets.OCTOCAT_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" "gh-pages:gh-pages"
+          git show --stat-count=10 HEAD
+        working-directory: /tmp/deploy
+    runs-on: ubuntu-latest
+  culminate:
+    needs:
+      - deploy
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - uses: actions/download-artifact@v2
+        with:
+          name: artifacts
+      - run: curl --silent --fail --show-error --location --output - "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/master/_scripts/culminate.py" | python3 -
+        env:
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+    runs-on: ubuntu-latest
+
+# vim: set expandtab shiftwidth=2 syntax=yaml:

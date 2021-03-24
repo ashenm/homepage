@@ -5,7 +5,7 @@ from yaml import BaseLoader, load
 
 # build artifacts
 excludes = [
-  '.artifacts',
+  'artifacts.txt',
   'resume.pdf',
   'resume.html',
   'robots.txt',
