@@ -10,7 +10,7 @@ from subprocess import DEVNULL, PIPE, run
 from urllib.request import urlopen
 
 # build custom routes
-spawnlp(P_WAIT, 'python3', 'python', '.travis/routes.py')
+spawnlp(P_WAIT, 'python3', 'python', '_scripts/routes.py')
 
 # fetch resume.html
 with open(file='resume.html', mode='wb') as file:

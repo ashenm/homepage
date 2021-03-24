@@ -13,6 +13,7 @@ exclude:
   - Gemfile
   - Makefile
   - README.md
+  - requirements.txt
 
 # metadata defaults
 lang: 'en'

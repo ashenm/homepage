@@ -2,19 +2,15 @@
 
 .PHONY: build
 build: _data/routes.yml clean ## build site
-	./.travis/build.py
+	./_scripts/build.py
 
 .PHONY: clean
 clean: ## clean build artifacts
-	./.travis/clean.py
+	./_scripts/clean.py
 
 .PHONY: culminate
 culminate: ## trigger reverse-dependency builds
-	./.travis/culminate.py
-
-.PHONY: environment
-environment:
-	./.travis/environment.py
+	./_scripts/culminate.py
 
 .PHONY: help
 .SILENT: help
@@ -23,8 +19,8 @@ help: ## show make targets
 
 .PHONY: help
 install: ## install requisite packages
-	./.travis/install.py
+	./_scripts/install.py
 
 .PHONY: serve
 serve: build ## locally serve site
-	./.travis/serve.py
+	./_scripts/serve.py

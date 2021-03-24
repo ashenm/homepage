@@ -16,11 +16,10 @@ with open('.artifacts') as artifacts:
 # https://api.cloudflare.com/#zone-purge-files-by-url
 urlopen(Request(
   method='POST',
-  url='https://api.cloudflare.com/client/v4/zones/{}/purge_cache'.format(environ['CLOUDFLARE_ZONE_ID']),
   data=dumps({ 'files': hrefs }).encode('utf-8'),
   headers={
-    'Content-Type': 'application/json',
-    'X-Auth-Email': environ['CLOUDFLARE_USER'],
-    'X-Auth-Key': environ['CLOUDFLARE_TOKEN']
-  }
+    'Authorization': 'Bearer {}'.format(environ['CLOUDFLARE_TOKEN']),
+    'Content-Type': 'application/json'
+  },
+  url='https://api.cloudflare.com/client/v4/zones/{}/purge_cache'.format(environ['CLOUDFLARE_ZONE_ID'])
 ))
