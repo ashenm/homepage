@@ -12,6 +12,10 @@ hrefs = [ origin ]
 with open('artifacts.txt') as artifacts:
   hrefs.extend([ '{}{}'.format(origin, artifact.strip()) for artifact in artifacts ])
 
+# verbose parameters on CI
+if environ.get('CI'):
+  print(dumps(hrefs, indent=2))
+
 # purge CloudFlare cache
 # https://api.cloudflare.com/#zone-purge-files-by-url
 urlopen(Request(
