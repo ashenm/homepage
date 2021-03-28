@@ -19,7 +19,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - run: pip3 install --requirement requirements.txt
+      - run: make install
       - run: make build
       - run: tar --create --bzip2 --verbose --file=artifacts.tar.bz2 _site
       - uses: actions/upload-artifact@v2

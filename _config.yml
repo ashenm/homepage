@@ -7,13 +7,13 @@ url: 'https://www.ashenm.ml'
 plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
-
 exclude:
   - CNAME
   - Gemfile
   - Makefile
   - README.md
   - requirements.txt
+  - vendor
 
 # metadata defaults
 lang: 'en'

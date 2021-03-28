@@ -8,8 +8,6 @@ excludes = [
   'artifacts.txt',
   'resume.pdf',
   'resume.html',
-  'robots.txt',
-  'sitemap.xml'
 ]
 
 # clean build artifacts
