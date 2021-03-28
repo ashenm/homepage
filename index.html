@@ -147,7 +147,7 @@
       <h2 class="sr-only">portfolio</h2>
       <div class="row">
       {% for portfolio in site.data.portfolios %}
-        <div class="portfolio col-6 col-sm-4 col-lg my-3">
+        <div class="portfolio col-6 col-lg my-3">
           <a href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
             <i class="{{ portfolio.fontawesome }}"></i>
             <h3>{{ portfolio.title }}</h3>
