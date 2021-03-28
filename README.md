@@ -1,2 +1,2 @@
 # Homepage #
-[![Build Status](https://travis-ci.com/ashenm/homepage.svg?branch=master)](https://travis-ci.com/ashenm/homepage)
+[![GitHub Pages](https://github.com/ashenm/homepage/actions/workflows/pages.yml/badge.svg)](https://github.com/ashenm/homepage/actions/workflows/pages.yml)
