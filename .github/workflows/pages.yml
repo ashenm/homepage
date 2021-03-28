@@ -28,6 +28,8 @@ jobs:
           path: |
             artifacts.tar.bz2
             artifacts.txt
+    env:
+      JEKYLL_ENV: production
     runs-on: ubuntu-latest
   deploy:
     needs:
