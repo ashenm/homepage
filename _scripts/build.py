@@ -20,10 +20,6 @@ with open(file='resume.html', mode='wb') as file:
 with open(file='resume.pdf', mode='wb') as file:
   file.write(urlopen('https://raw.githubusercontent.com/ashenm/xmlresume/gh-pages/resume.pdf').read())
 
-# list artifacts for cache purging
-with open(file='artifacts.txt', mode='wt') as file:
-  file.writelines([ '{}\n'.format(path.replace('_site', '')) for path in iglob('_site/**', recursive=True) ])
-
 # fetch base template
 with open(file='_includes/base.html', mode='rt') as file:
   template = file.read()
@@ -40,9 +36,9 @@ with open(file='_includes/base.html', mode='wt') as file:
 spawnlp(P_WAIT, 'bundle', 'bundle', 'exec', 'jekyll', 'build', '--profile')
 
 # sitemap.xml
-with open(file='sitemap.xml', mode='wt') as destination, open(file='_site/sitemap.xml', mode='rb') as source:
+with open(file='_site/sitemap.xml', mode='r+t') as stream:
 
-  sitemap = BeautifulSoup(source, 'lxml-xml')
+  sitemap = BeautifulSoup(stream, 'lxml-xml')
 
   for loc in sitemap.find_all('loc'):
 
@@ -51,7 +47,9 @@ with open(file='sitemap.xml', mode='wt') as destination, open(file='_site/sitema
 
     loc.string = sub(r'\.html$', '', loc.string)
 
-  destination.write(str(sitemap))
+  stream.seek(0)
+  stream.write(str(sitemap))
 
-# robot.txt
-copyfile('_site/robots.txt', 'robots.txt')
+# list artifacts for cache purging
+with open(file='artifacts.txt', mode='wt') as file:
+  file.writelines([ '{}\n'.format(path.replace('_site', '')) for path in iglob('_site/**', recursive=True) ])

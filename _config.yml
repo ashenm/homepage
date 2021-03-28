@@ -12,6 +12,7 @@ exclude:
   - Gemfile
   - Makefile
   - README.md
+  - requirements.txt
   - vendor
 
 # metadata defaults
