@@ -10,6 +10,10 @@
   link: https://github.com/ashenm
   fontawesome: fab fa-github
 
+- title: GitLab
+  link: https://gitlab.com/ashenm
+  fontawesome: fab fa-gitlab
+
 # - title: Glitch
 #   link: https://glitch.com/@ashenm
 #   fontawesome: fab fa-node-js
