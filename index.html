@@ -131,14 +131,14 @@
     <section class="section">
       <h1>Ashen Gunaratne</h1>
       <h2 class="sr-only">introduction</h2>
-      <p class="lead">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences of Harvard University</a></p>
+      <p class="lead">Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" rel="noopener" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences of Harvard University</a></p>
       <a class="navigator" href="#about"><i class="fas fa-caret-down"></i></a>
     </section>
 
     <section class="section">
       <h2 class="sr-only">about</h2>
       <img class="bg-white rounded-circle my-3" alt="a portrait of ashen gunaratne" width="175" height="175" src="https://avatars2.githubusercontent.com/u/16164426?v=4" />
-      <p>Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
+      <p>Ashen Gunaratne is an alumnus of the <a href="https://www.seas.harvard.edu" rel="noopener" target="_blank">Harvard John A. Paulson School of Engineering and Applied Sciences [SEAS] of Harvard University</a>. He completed his secondary education at <a href="https://www.lakeland.edu.lk">Lakeland Inter-American
           School</a> and primary education at <a href="https://www.sebsmoratuwa.lk">St. Sebastian's College</a>.</p>
       <h3><a class="btn btn-light" href="/resume.pdf" hreflang="en">résumé</a></h3>
     </section>
@@ -148,7 +148,7 @@
       <div class="row">
       {% for portfolio in site.data.portfolios %}
         <div class="portfolio col-6 col-sm-4 col-lg my-3">
-          <a href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'author' }}">
+          <a href="{{ portfolio.link }}" target="{{ portfolio.target | default: '_blank' }}" rel="{{ portfolio.rel | default: 'noopener' }}">
             <i class="{{ portfolio.fontawesome }}"></i>
             <h3>{{ portfolio.title }}</h3>
           </a>
@@ -162,7 +162,7 @@
       <div class="row">
       {% for contact in site.data.contacts %}
         <div class="contact col-6 col-sm-4 col-lg my-3">
-          <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author' }}">
+          <a href="{{ contact.link }}" target="{{ contact.target | default: '_blank' }}" rel="{{ contact.rel | default: 'author noopener' }}">
             <i class="{{ contact.fontawesome }}"></i>
             <h3 class="sr-only sr-only-focusable">{{ contact.title }}</h3>
           </a>
