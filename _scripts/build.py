@@ -49,6 +49,7 @@ with open(file='_site/sitemap.xml', mode='r+t') as stream:
 
   stream.seek(0)
   stream.write(str(sitemap))
+  stream.truncate()
 
 # list artifacts for cache purging
 with open(file='artifacts.txt', mode='wt') as file:
