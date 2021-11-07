@@ -18,6 +18,10 @@
 #   link: https://glitch.com/@ashenm
 #   fontawesome: fab fa-node-js
 
+- title: HackerRank
+  link: https://www.hackerrank.com/ashenm
+  fontawesome: fab fa-hackerrank
+
 - title: Launchpad
   link: https://launchpad.net/~ashenm
   fontawesome: fab fa-ubuntu
@@ -26,6 +30,6 @@
   link: https://orcid.org/0000-0003-2545-4984
   fontawesome: fab fa-orcid
 
-- title: repl.it
-  link: https://repl.it/@ashenm
-  fontawesome: fas fa-code-branch
+# - title: repl.it
+#   link: https://repl.it/@ashenm
+#   fontawesome: fas fa-code-branch
