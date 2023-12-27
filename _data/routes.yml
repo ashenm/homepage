@@ -3,9 +3,9 @@
 - path: example
   url: https://www.example.com/
 - path: vault
-  url: https://vault.ashenm.ml/
+  url: https://vault.ashenm.dev/
 - path: feedback
-  url: https://sentiment.ashenm.ml/
+  url: https://sentiment.ashenm.dev/
 - path: github
   url: https://github.com/ashenm
 - path: transcripts

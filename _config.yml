@@ -2,7 +2,7 @@
 safe: ture
 timezone: 'Etc/UTC'
 encoding: 'utf-8'
-url: 'https://www.ashenm.ml'
+url: 'https://www.ashenm.dev'
 
 plugins:
   - jekyll-redirect-from

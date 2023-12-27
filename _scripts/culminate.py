@@ -5,7 +5,7 @@ from os import environ
 from urllib.request import Request, urlopen
 
 # parameters
-origin = 'https://www.ashenm.ml'
+origin = 'https://www.ashenm.dev'
 hrefs = [ origin ]
 
 # construct file hrefs
