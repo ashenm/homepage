@@ -51,9 +51,9 @@ jobs:
           git checkout --orphan gh-pages
           git config user.email "mail@ashenm.ml"
           git config user.name "Ashen Gunaratne"
-          echo "www.ashenm.ml" | tee CNAME
+          echo "www.ashenm.dev" | tee CNAME
           git add --all .
-          git commit --quiet --message "Deploy www.ashenm.ml to github.com/${GITHUB_REPOSITORY}.git:gh-pages"
+          git commit --quiet --message "Deploy www.ashenm.dev to github.com/${GITHUB_REPOSITORY}.git:gh-pages"
           git push --force --quiet "https://${{ secrets.OCTOCAT_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" "gh-pages:gh-pages"
           git show --stat-count=10 HEAD
         working-directory: /tmp/deploy
