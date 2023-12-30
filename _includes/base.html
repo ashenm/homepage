@@ -67,17 +67,20 @@
 
   {{ scripts }}
 
-</head>
-<body>
-
-  {{ body }}
-
   {%- if jekyll.environment == 'production' -%}
     <!-- Google Analytics -->
-    <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga('create', 'UA-84329766-1', 'auto'); ga('send', 'pageview');</script>
-    <script defer="defer" src='https://www.google-analytics.com/analytics.js'></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-FBEY197ZJ2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-FBEY197ZJ2');
+    </script>
     <!-- END Google Analytics -->
   {%- endif -%}
 
+</head>
+<body>
+  {{ body }}
 </body>
 </html>
