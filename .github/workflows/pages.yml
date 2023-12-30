@@ -73,5 +73,17 @@ jobs:
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
           CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
     runs-on: ubuntu-latest
+  slack:
+    needs:
+      - culminate
+    if: ${{ always() }}
+    steps:
+      - uses: Gamesight/slack-workflow-status@master
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          channel: "#github"
+          name: "GitHub Workflow"
+    runs-on: ubuntu-latest
 
 # vim: set expandtab shiftwidth=2 syntax=yaml:
