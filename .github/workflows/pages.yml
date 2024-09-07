@@ -22,7 +22,7 @@ jobs:
       - run: make install
       - run: make build
       - run: tar --create --bzip2 --verbose --file=artifacts.tar.bz2 _site
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4.4.0
         with:
           name: artifacts
           path: |
@@ -39,7 +39,7 @@ jobs:
       github.event_name != 'pull_request' &&
       !startsWith(github.event.head_commit.message, '[Skip Deploy]')
     steps:
-      - uses: actions/download-artifact@v4.1.7
+      - uses: actions/download-artifact@v4.1.8
         with:
           name: artifacts
       - run: tar --extract --bzip2 --verbose --file=artifacts.tar.bz2
@@ -65,7 +65,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - uses: actions/download-artifact@v4.1.7
+      - uses: actions/download-artifact@v4.1.8
         with:
           name: artifacts
       - run: curl --silent --fail --show-error --location --output - "https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/master/_scripts/culminate.py" | python3 -
@@ -85,5 +85,4 @@ jobs:
           channel: "#github"
           name: "GitHub Workflow"
     runs-on: ubuntu-latest
-
 # vim: set expandtab shiftwidth=2 syntax=yaml:
